@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flex</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  margin: 5px;
+  height:100vh;
+}
+
+
+
+
+.header {
+
+  background: red;
+  height: 15vh;
+
+}
+
+
+
+
+
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+
+.side {
+
+  flex: 15%;
+  background-color: green;
+  padding: 20px;
+}
+
+.side2 {
+
+  flex: 15%;
+  background-color: purple;
+  padding: 20px;
+}
+
+
+.main {
+
+  flex: 60%;
+  background-color: blue;
+  padding: 20px;
+}
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+  .row {
+
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+  }
+}
+</style>
+</head>
+<body>
+
+
+
+
+<div class="header">
+
+</div>
+
+
+<div class="row">
+  
+  <div class="side">
+    <p id = "div1">Hello World!</p>
+  </div>
+  <div class="main">
+    
+  </div>
+
+  <div class="side2">
+    
+   
+  </div>
+</div>
+
+
+
+</body>
+</html>

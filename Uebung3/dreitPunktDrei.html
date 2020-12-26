@@ -1,0 +1,233 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="stylesheet.css">
+        <title>Nachbau</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="wrapper">
+        <div class="title" >
+            <div class="item1">The book series</div>
+            <div class="item2">Testimonials</div>
+            <div class="item3">The Author</div>
+            <div class="item4">Free resources</div>
+        </div>
+    </div>
+    
+
+    <div class="center2">
+        <div class="text_item"><h1><b>You dont know JavaScript</b></h1></div>
+ 
+
+
+        <div class="image"><img src="https://kaul.inf.h-brs.de/we/assets/img/landing-img.png" style="height:50vh;" ></div>
+  
+
+        <div class="text_item2">Don't just drift through JavaScript.</div>
+        <div class="text_item3">Understand how JavaScript works</div>
+        <div class="text_item4"> Start your journey through the bumpy side of JavaScript</div>
+        <div class="text_item5">ORDER YOUR COPY NOW</div>
+    </div>
+
+    <div class="test">
+        <div class="bottom">The first ebook in the book serien is absolutel free.</div>
+        <div class="bottom2">Find out more about this offer</div>
+    </div>
+
+
+    </body>
+</html>
+
+* {
+
+    box-sizing: border-box;
+    
+    font-family: "Bedrock";
+  }
+
+  .wrapper {
+      width: 100%;
+      align-self: flex-end;
+  }
+
+.title {
+
+    
+  display: grid;
+  grid-template-columns: repeat(8, 12.5%);
+
+
+  grid-gap: 10px;
+  height: 5%;
+  width: 100%;
+  background-color: rgb(61, 61, 61);
+  color:white;
+
+
+
+}
+
+.center {
+    display: grid;
+    grid-template-columns: 40% 60%;
+  
+  
+    grid-gap: 10px;
+    height: 5%;
+    width: 100%;
+    background-color: rgb(173, 58, 58);
+    color:white;
+}
+
+.center2 {
+
+    display: grid;
+    grid-template-columns: repeat(20, 5%);
+    grid-template-rows: repeat(20, 5%);
+  
+    grid-gap: 10px;
+    height: 70%;
+    width: 100%;
+    background-color: rgb(238, 232, 232);
+    color:white;
+
+}
+
+
+/* .center3 {
+
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    grid-row: repeat(5, 20%);
+  
+    grid-gap: 10px;
+    height: 70%;
+    width: 100%;
+    background-color: rgb(185, 185, 185);
+    color:white;
+
+} */
+
+.item1, .item2, .item3, .item4 {
+
+    text-align: center;
+
+    
+    color:white;
+
+}
+
+.item1 {     grid-column: 3;}
+.item2 {    grid-column: 4;}
+.item3 {    grid-column: 5;}
+.item4 {    grid-column: 6;}
+.item2 {
+
+}
+
+.text_item { 
+    grid-column: 1 / 15;
+    grid-row: 2 / 2;
+
+    font-size: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    justify-content: center;
+    margin: auto;
+}
+
+.text_item2 { 
+    grid-column: 7 / 21;
+    grid-row: 5 ;
+
+    font-size: 1.5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    justify-content: flex-end;
+    align-content: center;
+    margin: auto;
+}
+
+.text_item3 { 
+    grid-column: 7 / 21;
+    grid-row: 7 ;
+
+    font-size: 1.5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+}
+
+.text_item4 { 
+    grid-column: 7 / 21;
+    grid-row: 9 ;
+
+    font-size: 1.5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+}
+
+
+.text_item5 {
+    grid-column: 10 / 15;
+    grid-row: 11 ;
+
+    background-color:  rgb(255, 140, 0);
+
+    font-size: 1.5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+
+
+}
+
+
+.image {
+    grid-area: 4 / 2 / 5 / 11;
+
+    /* justify-content: center;
+    align-self: center; */
+    
+
+}
+
+.test {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(4, 25%);
+  
+    grid-gap: 10px;
+    height: 20%;
+    width: 100%;
+    background-color: darkblue;
+    color:white;
+}
+
+
+.bottom {
+    
+    grid-column: 2 / 5 ;
+    grid-row: 2 / 2 ;
+    margin: auto;
+}
+
+.bottom2 {
+    
+    background-color:  rgb(255, 140, 0);
+    bottom: 10px;
+    grid-column: 2/5 ;
+    grid-row: 3 ;
+    margin: auto;
+}
+
+
