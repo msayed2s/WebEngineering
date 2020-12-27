@@ -2,11 +2,25 @@
 <html>
     <head>
         <title>Test</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <script src = "javascript.js"> var t = test(1);</script>
-        <div onclick="test(1)">Übung 1</div>
-        <div id="div1"></div>
+        <!-- <h1>Grid Layout</h1>
+
+        <p>This grid layout contains six columns and three rows:</p> -->
+        
+        <div class="grid-container">
+          <div class="item1"><p class = "item11">Header</p></div>
+          <div class="item2"><table>
+              <tr> <div onclick="test(1)">Übung 1</div> </tr>
+              <tr><div id="div1" class="unter"></div></tr>
+                <tr>Übung 2</tr>
+            </table></div>
+          <div id="main" class="item3">Main</div>  
+          <div class="item4">Right</div>
+          <div class="item5">Footer</div>
+        </div>
 
 
     </body>
