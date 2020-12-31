@@ -43,8 +43,8 @@ function test(nummer) {
 
              var title = ["CSS Positionierung Teil 1", "CSS Positionierung Teil 2", "Wireframe with HTML and CSS"]
              var pfad = ["Uebung2/zweiPunktEins.html", "Uebung2/zweiPunktZwei.html", "Uebung2/zweiPunktDrei.html"]
-             generator(title, pfad, nummer)
-
+             generator(title, pfad, nummer);
+             backIn(nummer);
              
             counter = 0;
             bool[nummer] = 99;
@@ -63,7 +63,7 @@ function test(nummer) {
             var title = ["Responsiv mit Flexbox Desktop-First", "Responsiv mit Grid Mobile-First", "Responsiv mit Grid"]
             var pfad = ["Uebung3/dreiPunktEins.html", "Uebung3/dreiPunktZwei.html", "Uebung3/dreitPunktDrei.html"]
             generator(title, pfad, nummer)
-
+            backIn(nummer)
             
            counter = 0;
            bool[nummer] = 99;
@@ -81,7 +81,7 @@ function test(nummer) {
         var title = ["Responsiv mit Flexbox Desktop-First", "Responsiv mit Grid Mobile-First", "Responsiv mit Grid"]
         var pfad = ["Uebung3/dreiPunktEins.html", "Uebung3/dreiPunktZwei.html", "Uebung3/dreitPunktDrei.html"]
         generator(title, pfad, nummer)
-
+        backIn(nummer)
         
         counter = 0;
         bool[nummer] = 99;
@@ -99,7 +99,7 @@ function test(nummer) {
         var title = ["Funktionen", "Objekte", "Fibonacci", "Topsort"]
         var pfad = ["Uebung4/vierPunktEins.html", "Uebung4/vierPunktZwei.html", "Uebung4/vierPunktDrei.html", "Uebung4/vierPunktVier.html"]
         generator(title, pfad, nummer)
-
+        backIn(nummer)
         
         counter = 0;
         bool[nummer] = 99;
@@ -117,7 +117,7 @@ function test(nummer) {
         var title = ["Klasse für Vorrangrelationen", "Topologische Iterierbarkeit", "Topologischer Generator", "Proxy", "DeepCopy"]
         var pfad = ["Uebung5/dreiPunktEins.html", "Uebung5/dreiPunktZwei.html", "Uebung5/dreitPunktDrei.html"]
         generator(title, pfad, nummer)
-
+        backIn(nummer)
         
         counter = 0;
         bool[nummer] = 99;
@@ -136,17 +136,32 @@ function test(nummer) {
         var title = ["Responsiv mit Flexbox Desktop-First", "Responsiv mit Grid Mobile-First", "Responsiv mit Grid"]
         var pfad = ["Uebung3/dreiPunktEins.html", "Uebung3/dreiPunktZwei.html", "Uebung3/dreitPunktDrei.html"]
         generator(title, pfad, nummer)
-
+        backIn(nummer)
         
         counter = 0;
         bool[nummer] = 99;
         break;
+
+
+
         default:
+            console.log("no such thing " + nummer)
             break;
     }
 }
 
 
+function backIn(nummer) {
+
+    for(let i = 0; i < 7; i++) {
+        if(i === nummer) {
+            continue;
+        }
+        var list = document.getElementById("div" + i);
+        list.innerHTML = "";
+        bool[nummer] = 0;
+    }
+}
 
 
 
@@ -160,11 +175,11 @@ function changeStyle() {
 
 
     if(changedBackground) {
-        document.head.innerHTML  = document.head.innerHTML.replace("blue.css", "white.css");
+        document.head.innerHTML  = document.head.innerHTML.replace("light.css", "dark.css");
         changedBackground = !changedBackground;
 
     } else {
-        document.head.innerHTML = document.head.innerHTML.replace("white.css", "blue.css");
+        document.head.innerHTML = document.head.innerHTML.replace("dark.css", "light.css");
         changedBackground = !changedBackground;
 
     }
