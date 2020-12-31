@@ -15,22 +15,23 @@
     'menu main main main main main'
     'footer footer footer footer footer footer';
   grid-gap: 10px;
+
   /* background-color: #fdfdfd; */
 
   /* background-image: url("background.png"); */
 
   padding: 10px;
   width: 95vw;
-  /* height: 95vh;
+  height: 95vh;
 }
 
 
 
 .grid-container > div {
-  background-color: rgba(0, 0, 0, 0.8);
+  /* background-color: rgba(0, 0, 0, 0.8); */
   text-align: center;
   padding: 20px 0;
-  font-size: 30px; */
+  font-size: 30px;
 }
 
 .unter {
