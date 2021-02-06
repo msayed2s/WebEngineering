@@ -5,7 +5,7 @@
   height: 100vh;
   overflow: hidden;
   background-size: 400% 400%;
-  background-image: linear-gradient(-45deg, #3366ff, #33ff00);
+  background-image: linear-gradient(-45deg, #3366ff, #9000ff);
   animation: mymove 10s linear infinite;
 }
 
