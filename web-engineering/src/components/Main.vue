@@ -1,6 +1,11 @@
 <template>
     <div class="main">
-        {{subcontent}}
+
+        <div 
+        v-for="sub in subcontent" 
+        :key="sub"
+        v-html="sub"></div>
+
         <!-- <div v-for="data in content" :key="data">
             <div v-for="i in data" :key="i">
                 {{i.content}}
@@ -18,7 +23,7 @@
 export default {
     name: "Main",
     props: {
-        subcontent:String
+        subcontent: Array
     },
     data() {
         return {
@@ -46,6 +51,9 @@ export default {
     text-align: left;
     /* background-color: #55555; */
     color: white;
+    font-size: 22px;
     
 }
+
+h1   {color: blue;}
 </style>

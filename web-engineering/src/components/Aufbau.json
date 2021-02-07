@@ -1,0 +1,156 @@
+{
+    "Einführung": {
+      "Fachliche Argumentation über Erfolgsprinzipien des WWW": {
+        "content": [
+                    "<h2>Mit welchen fachlichen Argumenten wurde das WWW-Proposal von TBL abgelehnt?</h2>",
+                    "TBL's Chef hat die Idee als Interessant jedoch zu wage bezeichnet. Die Hypertext Community hatte den Eindruck, das sie in der Wissenschaft schon weiter war und mehr erreicht hatte und dass das Konzept von TBL einen Rückschritt darstellen würde. Insbesondere , da das Konzept von TBL 'broken links' erlaubt haben. <br/><br/><br/>",
+                    "<h2>Was sind die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde?</h2>", 
+                    "Wagheit wurde mit Evolviebarkeit verwechselt. Technisch sind 'broken links' vermeidbar.",
+                    "<h2>Was wäre der Preis für die garantierte Verhinderung von “broken links”?</h2>",
+                    "Der Preis für 'broken links', also Referenzielle Integrität, ist ein sehr hoher Ressourcen aufwand, da Datensätze bzw. Links regelmäßig überprüft werden müssen. Bei sehr großen Datenmengen könnte es so sogar zum Systemausfall kommen."
+                ],
+        "references": [
+                    "https://developer.mozilla.org/de/docs/Web/HTML/Element/h1-h6"
+                ]
+      },
+      "HTTP": {
+        "content": [
+                    "<h2>Sie bekommen im Browser den HTTP Status Code 200. Was bedeutet das?</h2>",
+                    "Code 200 = 'OK' - Die Anfrage war erfolgreich.",
+                    "<h2>Sie bekommen im Browser den HTTP Status Code 301. Was hat das zu bedeuten? </h2>",
+                    "Code 301 = 'Moved Permanently' - Die angefragte URL ist jetzt dauerhaft unter einer neuen Adresse erreichbar (Redirect). Die alte ist nicht mehr gültig.",
+                    "<h2>Sie bekommen im Browser den HTTP Status Code 400. Was hat das zu bedeuten? Was können Sie dagegen tun?</h2>",
+                    "Code 400 = 'Bad Request' - Der Server kann die Anfrage nicht bearbeiten, da ein Fehler seitens des Clients vorliegt (z.B falsche Eingabe). Der User sollte seine Eingabe prüfen und die Seite erneut aufrufen. Sollte dies nicht zum Erfolg führen, könnte es auch sein, dass veraltete Cookies oder DNS-Einträge vorliegen. Es empfiehlt sich den Browser Cache zu leeren.",
+                    "<h2>Sie bekommen im Browser den HTTP Status Code 403. Was hat das zu bedeuten? Was können Sie dagegen tun?</h2>",
+                    "Code 403 = 'Forbidden' - Der Client verfügt nicht über die nötigen Berechtigungen die Anfrage auszuführen oder eine https URL wurde nur als 'http' aufgerufen. Mögliche Fehlerquellen könnten auch Firewall-Einstellungen oder Browser Erweiterungen des Clients sein",
+                    "(z.B Add-Blocker). Hier kann man natürlich die entsprechenden Einstellungen anpassen bzw. Erweiterungen deaktivieren, die Seite neu laden und ggf. vorher den Browser Cache leeren.",
+                    "<h2>In einer Webanwendung benötigen Sie eine OPTIONS-Anfrage, die die Optionen des Servers vor dem eigentlichen Zugriff erfragen soll. Aus Performanzgründen soll die Abfrage jedoch cacheable sein. Wie könnten Sie dafür eine Lösung angehen?</h2>",
+                    "Vielleicht könnte der Server irgendwie die Options als WWW-Resource zur Verfügung stellen. Diese könnten dann über GET abgefragt und gecached werden."
+                ],
+        "references": [
+          "https://kaul.inf.h-brs.de/we/#app-content-2-2 - 9. Lösung le01_a2"
+        ]
+      },
+      "HTML-Literatur lesen und Fragen beantworten": {
+          "content": [
+                    "<h2>Was ist HTML?</h2>",
+                    "<ul> <li>steht für: (H)yper (T)ext (M)arkup (L)anguage</li> <li>die Standart-Sprache zur erstellung von Web Seiten</li> <li>beschreibt die Struktur einer Web Seite</li> <li>besteht aus einer Serie von Elementen</li> </ul>",
+                    "<h2>Wie kann man eine geschachtelte geordnete Liste der Schachtelungstiefe 3 erzeugen?</h2>",
+                    "<ol> <li>Eins</li> <ol> <li>Eins Punkt Eins</li><ol><li>Eins Punkt Zwei</li><ol><li>Eins Punkt Drei</li></ol></ol></ol></ol>",
+                    "<h2>Wie ist eine HTML-Tabelle aufgebaut?</h2>",
+                    "&lt;table> legt eine Tabelle an mit <tr> legt man eine neue Zeile an (tr = (T)able (R)ow) mit &lt;th> legt man einen (T)able (H)eader an (Kategorien wie z.B.: Name, Nachname, Nummer, ...).<br/> (Zentriert, dicke Schrift) mit &lt;td> werden die Daten zu den headern übergeben (td = (T)able (D)ata) (linksbündig, normale Schrift)",
+                    
+                    "<br/><br/>ANMERKUNG: zu jedem öffnenen Tag <...> MUSS es einen schließenden Tag </...> geben (sollte aber klar sein)",
+
+                    
+                    "<h2>Welche Konventionen sollte man bei Pfaden und Dateinamen beachten?</h2>",
+                    "Wenn möglich, sollte man bei Pfaden relative statt absolute Pfade nehmen. Dateinamen sollte sollten NUR Kleinbuchstabel enthalten.",
+                    "<h2>Wie baut man in HTML ein Menü?</h2>",
+                    "<div class='vertical-menu'> <a href='#' class='active'>Home</a> <a href='#'>Link 1</a> <a href='#'>Link 2</a> <a href='#'>Link 3</a> <a href='#'>Link 4</a> </div>",
+                    "<h2>Welche Attribute sollte man bei Bildern wie verwenden?</h2>",
+                    "einbinden von Bildern: &lt;img src='pfad' width='500' height='600'> <ul> <li>&lt;img>hat KEIN closing Tag!</li> <li>src: gibt den Pfad zur Image-Datei an</li> <li>width: gewünschte Breite des Bildes (in Pixeln)</li> <li>height: gewüschte Höhe des Bildes (in Pixeln)</li> </ul>"
+
+                ],
+          "references": [
+
+                ]
+      },
+      "HTML Wireframe": {
+          "content": [
+              "<h2>Gegeben ist folgendes HTML-Wireframe</h2> <img src='https://kaul.inf.h-brs.de/we/assets/img/wireframe01.jpg' width='500' height='600'>",
+              "Mit welchem HTML-Code (ohne CSS, nur mit HTML-Tags) kann man diesen Wireframe exakt nachbilden?",
+              "<!DOCTYPE html><html><head><title>01.2</title><style>table{  border-style: outset;  border-width: 10px;  border-color: grey;}th, td {  border-style: inset;  border-width: 1px;  border-color: grey;}#t01 {border: 1px;border-collapse: collapse ;}#t02 {border: none;style='width:50%'}</style>",
+              "</head><body><h1>Übung 1.2: Investors of the Web</h1><ul>",
+              "<li><b><u><mark>Tim Berners-Lee:</mark></u></b> WWW,HTTP,HTML,URI</li>  <li><b>Hakom Lie and Bert Bos:</b> ",
+              "CSS</li> <li><b>Bernand Eich:</b> JavaScript</li></ul><hr><br><h2>Inventors of the WWW</h2><br><table style='width: 100%'> <th colspan='4'>Inventors of the WWW</th> <tr> <th>WWW</th> <th>HTML</th> <th>CSS</th> <th>JavaScript</th> </tr> <tr> <td><mark>Tim Berners-Lee</mark></td> <td><mark>Tim Berners-Lee</mark></td> <td>Hakom Lie and Bert Bos</td> <td>Bren</td> </tr></table><br><hr><h3 style='width:50%;text-align:center;margin-left:0'>Inventors of the WWW</h3><hr style='width:50%;text-align:left;margin-left:0'><br>",
+              "",
+              "<table id='t02' style='border:none'> <th colspan='3' style='border:none'></th><tr style='border:none'> <th style='border:none'>HTML</th> <th style='border:none'>|</th> <th style='border:none'>JavaScript</th> </tr> <tr> <td style='border:none'><img src = 'https://kaul.inf.h-brs.de/we/assets/img/tbl.jpg'></td> <th style='border:none'>|</th> <td style='border:none'><img src = 'https://kaul.inf.h-brs.de/we/assets/img/eich.jpg'></td> </tr> <tr> <td style='border:none'><mark>Tim Berners-Lee</mark></td> <th style='border:none'>|</th> <td style='border:none'>Brendan Eich</td> </tr></table><hr></body></html>"
+          ],
+          "references": []
+      }
+    },
+
+    "CSS 1. Teil": {
+        "CSS Selektoren und CSS Farben": {
+          "content": [
+                      "<h2>Berechnen Sie die Spezifität folgender CSS-Selektoren:</h2>",
+                      "<ol> <li>div div div:focus .inner : 023</li> <li>h1 + div.main : 012</li> <li>div a:link[href*='h-brs'] : 022</li> <li>nav > a:hover::before : 013</li> <li>ul#primary-nav li.active : 112</li> </ol>",
+                      "<h2>Rechnen Sie folgende RGB-Werte in HSL-Werte um:</h2>",
+                      "<ol> <li>#ffffff :  0°, 0%, 100%</li> <li>#000 : 0°, 0%, 0%</li> <li>#ab0978 : 319°, 90%, 35%</li> <li>rgb(127,255,33) : 95°, 100%, 56%</li> <li>rgba(255,127,33,0.8) : 25°, 100%, 56%</li> </ol>"
+                       
+                      
+                  ],
+          "references": [
+                      "https://developer.mozilla.org/de/docs/Web/HTML/Element/h1-h6"
+                  ]
+        },
+        "CSS Positionierung": {
+          "content": [
+                      "<h2>Schauen Sie sich folgendes Video an und bauen Sie das dynamische Verhalten exakt nach (nur mit HTML und CSS, ohne JavaScript): </h2>",
+
+                      "<html><head><body><style>.sticky {width: 100%;position: sticky;top: 0;}section {padding: 50px;background: grey;border-bottom: 1px solid #ccc;margin-top: 60px;}</style>",
+                      "<h1 class='sticky'>Erste Überschrift</h1><section>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</section>",
+                      "<h1 class='sticky'>Zweite Überschrift</h1><section>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</section>",
+                    
+                      "<h1 class='sticky'>Dritte Überschrift </h1><section>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</section>",
+                      "</body></head></html>",
+
+
+                      "<h2>Schauen Sie sich folgendes Video an und bauen Sie das dynamische Verhalten exakt nach (nur mit HTML und CSS, ohne JavaScript): </h2>",
+                      "<!DOCTYPE html><html><head><title>Page Title</title></head><style>input:checked + div { display: none; }</style><body><input type='checkbox'  id=cb>Hide/Show<div>    <img src=https://upload.wikimedia.org/wikipedia/commons/a/a4/Hochschule_Bonn-Rhein-Sieg_Wolfgang_G%C3%B6ddertz_Induktion.jpg style='width:100%;height:auto;'></div></body></html>"
+
+
+
+
+
+                  ],
+          "references": [
+            "https://kaul.inf.h-brs.de/we/#app-content-2-2 - 9. Lösung le01_a2"
+          ]
+        },
+        "Wireframe with HTML and CSS": {
+            "content": [
+                      "<h2>Gegeben ist folgendes HTML-Wireframe:</h2>",
+                      "<b>Frage:</b> Mit welchem HTML- und CSS-Code kann man diesen Wireframe exakt nachbilden? Schreiben Sie Ihren CSS-Code direkt in die HTML-Datei.",
+                      "<!DOCTYPE html><html><body><h1 style='text-align: center'>Survey Form</h1><div id='outside'><form  style='text-align: center'>  <p style='text-align: center'> Let us know how we can improve freeCodeCamp</p>    <div>      <label id='name-label' for='name'>* Name:</label>      <input type='text' required id='name' name='user_name' placeholder='Enter your name'>   </div>    <div>      <label for='email-label'>* Email:</label>      <input type='email' id='email' name='user_email' placeholder='Enter your Email'>   </div>    <div>      <label id='email-label' for='Age'>* Age:</label>      <input type='Age' required id='age' name='age' placeholder='Age'>   </div></form><form>    <div>      <label for='role'>Which option best describes your current role?:</label>      <select id='dropdown'>  <option value='student'>Student</option>  <option value='prof'>Professor</option>  <option value='wismit'>Wissenschaftlicher Mitarbeiter</option>  <option value='rest'>Sonstiges</option>  </select></div></form><br><br><form>    <div>      <label for='Gender'>How likely is that you would recommend freeCodeCamp to a friend?</label>      <p style='text-align: center'>        <input type='radio' name='gender' value='male' checked> Definitely<br>        <input type='radio' name='gender' value='female'> Maybe<br>        <input type='radio' name='gender' value='other'> Not sure      </p>    </div></form><form>    <div>      <label for='role'>What do you like most in FCC:</label>      <select id='dropdown'>  <option value='option'>Select an option</option>  <option value='one'>One</option>  <option value='two'>two</option>  <option value='three'>three</option>  </select></div>  <br><br></form><form>    <label for='improve'>Things that should be improved in the future<br>(Check all that apply)</label>    <p style='text-align: center'>      <input type='checkbox' name='font-end' value='tattoo'> Font-end Projects<br>      <input type='checkbox' name='back-end' value='Car'> Back-end Projects<br>      <input type='checkbox' name='viz' value='car'> Data Visualization<br>    </p></form></body></html>"
+
+                  ],
+            "references": [
+  
+                  ]
+        }
+      },
+
+    "CSS 2. Teil": {
+
+    },
+
+    "JavaScript": {
+
+    },
+
+    "ECMAScript": {
+
+    },
+
+    "Functional": {
+
+    },
+
+    "DOM": {
+
+    },
+
+    "Async": {
+
+    },
+    "Vue": {
+
+    },
+
+    "PHP": {
+        
+    }
+
+
+  }

@@ -42,7 +42,8 @@ export default {
         transition-duration: 2s;
         list-style-type:none;
         margin: 10px;
-
+        font-size: 18px;
+        font-weight: bold;
 
         animation: 1s ease-out 0s 1 slideInFromTop;
 }
@@ -53,5 +54,27 @@ export default {
 
 }
 
+/* .subitems {
+    background-color: white;
+}
+
+.subitems:link, .subitems:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid rgba(0,128,0,0);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.subitems:hover, .subitems:active {
+  background-color: rgba(0,128,0,0);
+  color: white;
+} */
+
+/* .nachbau {
+    width:"50"; height:"60";
+} */
 
 </style>

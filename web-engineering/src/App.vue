@@ -52,7 +52,7 @@
 import Button from "./components/Button.vue"
 import Menu from "./components/Menu.vue"
 import Main from "./components/Main.vue"
-import content from "./Classname.json"
+import content from "./components/Aufbau.json"
 
 
 
@@ -69,14 +69,11 @@ export default {
   data() {
     return {
       lastSeen: "",
-      subcontent:"String",
+      subcontent: ["<h1>Willkommen auf meiner Seite!</h1>"],
       liNames:[],
       info:[],
       btnNames:[],
       main: [],
-      user: {
-        username: "Mo"
-      },
       content:content,
      
     }
@@ -123,8 +120,20 @@ export default {
     assignBtnNames(payload){
       this.btnNames = payload;
     },
-    load(payload) {
-      this.info = [];
+    clear() {
+      this.info = []
+    },
+
+
+    // https://www.sitepoint.com/delay-sleep-pause-wait/
+    sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    },
+    async load(payload) {
+      // setTimeout(() => this.clear(), 500);
+      // this.info = [];
+      this.clear();
+      await this.sleep(200);
 
       this.lastSeen = payload;
       // this.lastSeen.push(payload);

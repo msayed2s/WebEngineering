@@ -35,7 +35,7 @@
   grid-area: menu; 
   height: 60vh;   
   text-align: left; 
-  width: 70vh;
+  width: 40vh;
 
 }
 
@@ -51,6 +51,11 @@ body {
   transition-duration: 500ms;
 
 }
+h1, h2, h3, h4, h5, h6   {
+  /* text-align: center; */
+  /* color: blue; */
+}
+
 
 .grid-container {
   display: grid;
@@ -93,4 +98,19 @@ body {
 .links {
   font-size: 20px;
   text-align: left;
+}
+
+a:link, a:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid rgba(0,128,0,0);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: rgba(0,128,0,0);
+  color: white;
 }
