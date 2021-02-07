@@ -1,15 +1,55 @@
+/* Aufbau */
 /* https://www.w3schools.com/cssref/tryit.asp?filename=trycss_grid-template-areas3 */
+/* Animation :  */
+/* https://stackoverflow.com/questions/6805482/css3-transition-animation-on-load */
 
-.item1 { grid-area: header; height: 10vh;}
-.item2 { grid-area: menu; height: 60vh}
-.item3 { grid-area: main; height: 60vh}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+.item1 { 
+  grid-area: header; 
+  height: 10vh;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+
+
+}
+.item2 { 
+  grid-area: menu; 
+  height: 60vh;   
+  text-align: left; 
+  width: 70vh;
+
+}
+
+.item3 { grid-area: main; height: 60vh; width: 60vw; }
 .item4 { grid-area: right; height: 60vh}
 .item5 { grid-area: footer; height: 10vh;}
 
 
 
 body {
-  /* background-color: #555555; */
+  background-color: #363945;
+  color: white;
+  transition-duration: 500ms;
+
 }
 
 .grid-container {
@@ -17,6 +57,8 @@ body {
   grid-template-areas:
     'blank header header header header header'
     'menu main main main main main'
+    'menu main main main main main'
+    /* 'menu main main main main main' */
     'menu footer footer footer footer footer';
   grid-gap: 10px;
 
@@ -33,7 +75,7 @@ body {
 
 .grid-container > div {
   /* background-color: rgba(0, 0, 0, 0.8); */
-  text-align: center;
+  /* text-align: center; */
   padding: 20px 0;
   font-size: 30px;
 }
