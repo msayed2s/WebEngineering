@@ -46,6 +46,8 @@ export default {
         font-weight: bold;
 
         animation: 1s ease-out 0s 1 slideInFromTop;
+
+    /* border-left: 1px solid red; */
 }
 
 .subitems:hover {

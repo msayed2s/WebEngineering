@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <div class="grid-container">
-          <div class="item1" >
+          <div class="header" >
             <Button  
-            v-for="header in btnNames" 
-            :key="header"
-            :who="header"
+            v-for="name in btnNames" 
+            :key="name"
+            :who="name"
             @category="load($event)">>
             </Button>
               <!-- <Button @category="load($event)" who="Index"></Button>
@@ -17,18 +17,18 @@
           </div>
 
           
-          <div class="item2">
+          <div class="menu">
             <!-- https://www.smashingmagazine.com/2020/01/data-components-vue-js/ -->
             <Menu @update-main="updateMain($event)" :infos="info[0]" > </Menu>
           </div>
 
-          <div class="item3">
+          <div class="main">
             <!-- <Main whoo="./Uebung2/zweiPunktEins.html"></Main> -->
             <Main :subcontent="subcontent"></Main>
              <!-- <Main whoo="C:\Users\moesa\Documents\WebEngineering\Uebung2\zweiPunktEins.html">was</Main> -->
           </div>
 
-          <!-- <div class="item2"> -->
+          <!-- <div class="menu"> -->
 
  
 
@@ -39,7 +39,7 @@
               ></test> -->
 
           <!-- </div>
-          <div id="main" class="item3"><test title="Main"/></div>  
+          <div id="main" class="main"><test title="Main"/></div>  
           <div class="item4">Right</div> -->
          <!-- <div class="item5">Footer</div> -->
     </div>
@@ -129,6 +129,9 @@ export default {
     sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
     },
+
+
+    
     async load(payload) {
       // setTimeout(() => this.clear(), 500);
       // this.info = [];

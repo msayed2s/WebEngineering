@@ -1,5 +1,4 @@
-<template>
-    <div class="main">
+<template>     <div class="in_main">
 
         <div 
         v-for="sub in subcontent" 
@@ -46,14 +45,18 @@ export default {
 </script>
 
 <style scoped>
-.main {
+.in_main {
     width: 90%;
     text-align: left;
     /* background-color: #55555; */
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     
 }
 
-h1   {color: blue;}
+
+
+
+
+
 </style>

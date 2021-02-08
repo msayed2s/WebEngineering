@@ -24,24 +24,43 @@
 
 
 
-.item1 { 
+.header { 
   grid-area: header; 
   height: 10vh;
   animation: 1s ease-out 0s 1 slideInFromLeft;
 
+  /* https://www.w3schools.com/cssref/pr_border-bottom.asp */
+  /* border-bottom: 5px solid red; */
+
 
 }
-.item2 { 
+
+
+
+.menu { 
   grid-area: menu; 
   height: 60vh;   
   text-align: left; 
   width: 40vh;
 
+  /* https://www.w3schools.com/cssref/pr_border-bottom.asp */
+  /* border-right: 5px solid red; */
+
+  
+
 }
 
-.item3 { grid-area: main; height: 60vh; width: 60vw; }
-.item4 { grid-area: right; height: 60vh}
-.item5 { grid-area: footer; height: 10vh;}
+.main { 
+  grid-area: main; 
+  height: 60vh; 
+  width: 60vw; 
+ 
+  
+}
+
+
+.right { grid-area: right; height: 60vh}
+.footer { grid-area: footer; height: 10vh;}
 
 
 

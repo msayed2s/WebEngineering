@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="change" class="button">{{this.$attrs.who}}</button>
+        <button @click="change" class="button" >{{this.$attrs.who}}</button>
     </div>
 </template>
 
@@ -8,9 +8,13 @@
 // var count = 0;
     export default {
         name: "Button",
+                        isActive: false,
         // props:['who'],
         data() {
             return {
+                activeColor: "white",
+
+
                 //count: 0,
                 // who:"",
             };
@@ -20,7 +24,9 @@
                 this.count++;
             },
             change() {
-                this.$emit("category", this.$attrs.who)
+                this.$emit("category", this.$attrs.who);
+                this.isActive = true;
+                this.activeColor = "orange";
             }
         },
         created() {
@@ -40,20 +46,23 @@
 .button {
 
     background-color: #363945;
-    color: black;
+    color: white;
     border: 2px solid #555555;    
 
     float: left;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    transition-duration: 1s;
+    transition-duration: .5s;
 
     display: inline-block;
     padding: 14px 40px;
       margin: 4px 2px;
     /* border-radius: 12px; */
+
+    /* border-top: 2px solid black; */
+    border-bottom: 4px solid red;
 }
 
-.button:hover {
+.button:hover, .button:focus {
     /* background-color: #555555; */
     /* background-color: black; */
     color: white;
@@ -61,5 +70,15 @@
     border-radius: 12px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     cursor: pointer;
+    border-bottom: 4px solid orange;
+    color: orange;
 }
+
+ /* {
+    color:orange;
+    border-bottom: 4px solid orange;
+    
+} */
+
+
 </style>
