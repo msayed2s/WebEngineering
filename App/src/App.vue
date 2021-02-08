@@ -19,7 +19,7 @@
           
           <div class="menu">
             <!-- https://www.smashingmagazine.com/2020/01/data-components-vue-js/ -->
-            <Menu @update-main="updateMain($event)" :infos="info[0]" > </Menu>
+            <Menu @update-main="updateMain($event)" :infos="info[0]" whoo="test" > </Menu>
           </div>
 
           <div class="main">
@@ -75,6 +75,7 @@ export default {
       btnNames:[],
       main: [],
       content:content,
+      test: ""
      
     }
   },
@@ -148,7 +149,7 @@ export default {
            this.info.push(this.liNames[i])
 
     
-          console.log("HII")
+          // console.log("HII")
           // for(let j = 0; j < this.liNames.length; i++) {
             // this.info.push({"title" : this.liNames[i]})
       //       //console.log("WAS GEHT " + this.liNames[i])
@@ -174,14 +175,26 @@ export default {
       // }
       // this.user.username = username;
       },
+        
+  
+    
 
 
       updateMain(payload) {
         // this.lastSeen.push(payload)
-        console.log("VOHER : : : :      " + this.lastSeen[0] + " " + payload)
+        // console.log("VOHER : : : :      " + this.lastSeen[0] + " " + payload)
         // console.log("WAS GEHT     " + content[this.lastSeen[0]][this.lastSeen[1]].content)
         this.subcontent = ""
         this.subcontent = content[this.lastSeen][payload].content;
+
+
+      //   this.test = this.subcontent[1].split("<script>")[1]
+      //   var was = this.subcontent[1].split("<script>")[0] + "</body></html>"
+      //   this.test = this.test.split("</scrip")[0]
+      //   console.log(was)
+
+      // this.subcontent = [was];
+        
 
         switch(payload) {
           case("Google"): 

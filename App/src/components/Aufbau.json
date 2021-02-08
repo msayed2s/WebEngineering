@@ -161,7 +161,10 @@
     "JavaScript": {
         "Funktionen": {
             "content":[
-                ""
+                "Schreiben Sie eine Funktion identity(), die ein Argument als Parameter entgegen nimmt und dieses als Ergebnis zurück gibt.<br/>",
+               
+                "<html><body> <input type='number' id='text' value='text'><input type='submit' value='Submit' onclick='go()'> <p id='test' style='color:red'></p><script> function go() { var n = document.getElementById('text').value; document.getElementById('test').innerHTML = identity(n); } function identity(x) { return x; }</script></body></html>"
+
             ],
             "references":[
 

@@ -3,7 +3,7 @@
         <div 
         v-for="sub in subcontent" 
         :key="sub"
-        v-html="sub"></div>
+        v-html="sub">{{msg}}</div>
 
         <!-- <div v-for="data in content" :key="data">
             <div v-for="i in data" :key="i">
@@ -19,17 +19,25 @@
 
 // import content from "../Classname.json"
 
+
 export default {
     name: "Main",
+    
     props: {
-        subcontent: Array
+        subcontent: Array,
+
     },
+
+
+
     data() {
         return {
             // btnName :[],
-            msg: this.$attrs.who,
+            msg: '<script>' + this.$attrs.whoo + '</scrip' + "t>",
+
         };
     },
+
     // methods:{
         // passHeadings(){
         //     this.$emit("btnNames", this.btnName);
@@ -41,6 +49,7 @@ export default {
     //     }
     //     this.passHeadings();
     // }
+    
 }
 </script>
 
