@@ -1,12 +1,11 @@
 <template>
-    <div> 
+    <nav class="subContainer"> 
         <ul>
             <li v-for="info in infos" :key="info.title" @click="change(info)" class="subitems">
-                <!-- <a :href="info.href">{{info.title}}</a> -->
                 {{info}}
             </li>
         </ul>        
-    </div>
+    </nav>
 </template>
 
 <script>
@@ -17,7 +16,6 @@ export default {
     },
     methods: {
         change(payload) {
-            // console.log("HIERRR   " + [payload])
             this.$emit("update-main", payload)
         }
     }
@@ -27,56 +25,73 @@ export default {
 <style scoped>
 
 
-@keyframes slideInFromTop {
+/*              Animation                */
+/* https://webdeasy.de/top-css-buttons/ */
+
+@keyframes slideInFromLeft {
   0% {
-    transform: translateY(-100%);
+    transform: translateX(-100%);
   }
+  
   100% {
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
-
 .subitems {
-        cursor: pointer;
-        color: #ddd4db;
-        transition-duration: 2s;
-        list-style-type:none;
-        margin: 10px;
-        font-size: 18px;
-        font-weight: bold;
+  color: #FFF;
+  transition: all 0.3s;
+  position: relative;
+  height: 50px;
 
-        animation: 1s ease-out 0s 1 slideInFromTop;
-
-    /* border-left: 1px solid red; */
+    font-size: 20px;
+  margin: 5px;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  list-style-type: none;
+  
+}
+.subitems span {
+  transition: all 0.3s;
+}
+.subitems::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: red;
+  border-bottom-color: red;
+  transform: scale(0.1, 1);
+}
+.subitems:hover span {
+  letter-spacing: 2px;
+}
+.subitems:hover::before {
+  opacity: 1; 
+  transform: scale(1, 1); 
+}
+.subitems::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255,255,255,0.1);
+}
+.subitems:hover::after {
+  opacity: 0; 
+  transform: scale(0.1, 1);
 }
 
-.subitems:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.9), 0 6px 20px 0 rgba(0,0,0,0.9);
-
-
-}
-
-/* .subitems {
-    background-color: white;
-}
-
-.subitems:link, .subitems:visited {
-  background-color: white;
-  color: black;
-  border: 2px solid rgba(0,128,0,0);
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.subitems:hover, .subitems:active {
-  background-color: rgba(0,128,0,0);
-  color: white;
-} */
-
-/* .nachbau {
-    width:"50"; height:"60";
-} */
 
 </style>

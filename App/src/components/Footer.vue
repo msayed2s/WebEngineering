@@ -1,13 +1,13 @@
 <template>
     <div>
-        <button @click="change" class="button" >{{this.$attrs.who}}</button>
+        <a @click="change" class="Footer" >{{this.$attrs.who}}</a>
     </div>
 </template>
 
 <script>
 // var count = 0;
     export default {
-        name: "Button",
+        name: "Footer",
 
         // props:['who'],
         data() {
@@ -31,9 +31,13 @@
 
 
 <style scoped>
+
+* {
+    color: white;
+}
 /*              Animation                */
 /* https://webdeasy.de/top-css-buttons/ */
-
+/* 
 .button {
 
  float: left;
@@ -80,7 +84,7 @@ button:hover {
   transition: all 300ms ease-in-out;
   
   
-}
+} */
 
 
 

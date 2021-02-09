@@ -161,10 +161,31 @@
     "JavaScript": {
         "Funktionen": {
             "content":[
-                "Schreiben Sie eine Funktion identity(), die ein Argument als Parameter entgegen nimmt und dieses als Ergebnis zurück gibt.<br/>",
-               
-                "<html><body> <input type='number' id='text' value='text'><input type='submit' value='Submit' onclick='go()'> <p id='test' style='color:red'></p><script> function go() { var n = document.getElementById('text').value; document.getElementById('test').innerHTML = identity(n); } function identity(x) { return x; }</script></body></html>"
+                "<p><span  style='white-space: pre'>",
+                "Schreiben Sie eine Funktion identity(), die ein Argument als Parameter entgegen nimmt und dieses als Ergebnis zurück gibt.<br/><br/>",
+                "function identity(x) {    return x; }</p><br/><br/>",
 
+                "<p>Schreiben Sie eine Funktion identity_function(), die ein Argument als Parameter entgegen nimmt und eine Funktion zurück gibt, die dieses Argument zurück gibt.<br/><br/>",
+                "function identity_function( x ) {",
+                "   function f (x) { return console.log( x ) ; } return f(x) ; } </p>",
+
+                "<br/><br/>",
+
+                "<p>Schreiben Sie zwei binäre Funktionen add und mul, die Summe und Produkt berechnen.",
+                "function add(x, y) { return x + y;}function mul(x, y) { return x * y;} </p>",
+
+                "<br/><br/>",
+
+                "<p>Schreiben Sie eine Addier-Funktion addf(), so dass addf(x)(y) genau x + y zurück gibt. (Es haben also zwei Funktionsaufrufe zu erfolgen. addf(x) liefert eine Funktion, die auf y angewandt wird.)",
+                "function addf(x, y) { function help(x) { return y; } return x + help(y);}</p>",
+
+                "<br/><br/>",
+
+                "<p>Schreiben Sie eine Funktion applyf(), die aus einer binären Funktion wie add(x,y) eine Funktion addfberechnet, die mit zwei Aufrufen das gleiche Ergebnis liefert, z.B. addf = applyf(add); addf(x)(y) soll add(x,y) liefern. Entsprechend applyf(mul)(5)(6) soll 30 liefern, wenn mul die binäre Multiplikation ist.",
+                "function addf(x, y) { function help(x) { return y; } return x + help(y);}</p>",
+
+                "</span>"
+            
             ],
             "references":[
 
@@ -173,7 +194,8 @@
 
         "Objekte": {
             "content":[
-                ""
+                "Schreiben Sie die Prototypen Person und Auto in JavaScript, so dass jede Person weiß, welche Autos sie besitzt. Schreiben Sie eine Funktion conflict(), die feststellt, ob ein Auto von mehr als einer Person besessen wird.",
+                "var autoList = []function Auto(auto) {  this.auto = auto;}function Person(name, auto) {  var name = {name: name};  var auto = {auto: auto};  autoList.push(new Auto(auto));}function conflict(auto) {  var state = 0;  for(var x in autoList) {    if(x === auto) {      if(state === 2) {        return true;      }    }  }  return false;}"
             ],
             "references":[
 
@@ -182,7 +204,23 @@
 
         "Fibonacci": {
             "content":[
-                ""
+                "Schreiben Sie im Browser die Fibonacci-Funktion in JavaScript und geben Sie die ersten 2000 Fibonacci-Zahlen 0,1,1,2,3,5,8,13,... auf der Konsole mit console.log() aus.",
+                "Achten Sie auf Performanz: Berechnen Sie jeden Fibonacci-Wert nur einmal. Speichern Sie zu diesem Zweck jede bereits berechnete Fibonacci-Zahl in einer Tabelle.<br>",
+
+                "<html><body><script>class Vorrang { constructor(arr) { this._arr = arr; }get arrayy() { return this._arr; }sort( ) { var arr = this.arrayy;  var ordnung = [];  var poscurrent = 0;  var posnext = 0;  //Bei leere Relation  if(arr[0][0] === '') { return;  }  // Alle Tasks in der Relation werden einmalig in einer Liste aufgenommen  for(let x=0;x<arr.length;x++) { var xpostask = arr[x][0]; var ypostask = arr[x][1]; if(!ordnung.includes(xpostask)) { ordnung.push(xpostask); } if(!ordnung.includes(ypostask)) { ordnung.push(ypostask); }  }  //Nun Sortiere die Liste nach AbhÃ¤ngigkeiten der Relation  var fertig = false;  var tasktmp;  var countIterations = 0;  while (!fertig && countIterations < arr.length) { fertig = true; countIterations++; for(let x=0;x<arr.length;x++) {  var xpostask = arr[x][0]; var ypostask = arr[x][1]; poscurrent = ordnung.indexOf(xpostask); posnext = ordnung.indexOf(ypostask); if(poscurrent > posnext) {  //swap task  tasktmp = ordnung[poscurrent];  ordnung[poscurrent] = ypostask;  ordnung[posnext] = tasktmp;  fertig = false; } } }  if(countIterations == arr.length) { ordnung = new Array();  }  return ordnung; }} var test = new topsort([ ['schlafen', 'studieren'], ['essen', 'studieren'], ['studieren', 'prÃ¼fen'] ]); var erg = test.sort(); console.assert(erg == 'schlafen,essen,studieren,prÃ¼fen', 'Falsch: ', test); </script><b>Click Me:</b><input type=button onClick='document.write(erg)' value='Start'></body></html>"
+            ],
+            "references":[
+
+            ]
+        },
+
+        "Fibonacci: Frageteil": {
+            "content":[
+                "Was ist die größte Fibonacci-Zahl, die sich noch als Integer sicher speichern lässt (Number.MAX_SAFE_INTEGER)? Die wievielte Fibonacci-Zahl in der Fibonacci-Folge ist das? <br/>",
+                "8944394323791464 an der Stelle 78.<br/><br/>",
+
+                "Was ist die größte Fibonacci-Zahl, die sich noch als Number speichern lässt (Number.MAX_VALUE)? Die wievielte Fibonacci-Zahl in der Fibonacci-Folge ist das (d.h. welche Stelle in der Fibonacci-Folge)? <br/>",
+                "1.3069892237633987e+308 an der Stelle 1476"
             ],
             "references":[
 
@@ -191,7 +229,13 @@
 
         "Topsort": {
             "content":[
-                ""
+                "In jedem Projekt fallen Aufgaben (Tasks) an. Zwischen den Aufgaben gibt es paarweise Abhängigkeiten. Z.B. kann Task2 von Task1 abhängen, d.h. erst muss Task1 fertig sein, bevor Task2 starten kann, weil es dessen Ergebnisse benötigt. Tasks können auch unabhängig voneinander sein und parallel ablaufen. In JavaScript können Sie die Abhängigkeiten in Arrays codieren, z.B. kann man bei [ ['schlafen', 'studieren'], ['essen', 'studieren'], ['studieren', 'prüfen'] ] nicht prüfen, ohne vorher gegessen zu haben. Transitive Abhängigkeiten müssen also berücksichtigt werden.",
+
+                "Schreiben Sie in JavaScript eine Funktion topsort(), die eine topologische Sortierung berechnet.",
+                
+                "Achten Sie auf Performanz. Berechnen Sie die topologische Sortierung in linearer Zeit (Average Case).",
+
+                "<h1 style='color:red'>Aufgabe leider nicht geschafft</h1>"
             ],
             "references":[
 
@@ -203,7 +247,10 @@
     "ECMAScript": {
         "Klasse für Vorrangrelationen": {
             "content":[
-                ""
+                "Schreiben Sie eine ES6-Klasse Vorrang für Vorrangrelationen, z.B. new Vorrang([ ['schlafen', 'studieren'], ['essen', 'studieren'], ['studieren', 'prüfen'] ]). Wählen Sie eine Implementierung, die universell gültig, also nicht nur für dieses Beispiel gilt. (Überlegen Sie sich, über welche Properties und Methoden eine solche Klasse verfügen sollte und wie TopSort hier hinein spielt. Topologische Iterierbarkeit und topologischer Generator sind jedoch Gegenstand der nächsten Übungen weiter unten auf diesem Übungsblatt und sollten für diese Aufgaben aufgespart werden.)",
+
+                "Verwenden Sie die neuen Sprach-Konzepte aus der Vorlesung so weit wie möglich.",
+                "<html><body><script>classVorrang{constructor(arr){this._arr=arr;}getarrayy(){returnthis._arr;}sort(){vararr=this.arrayy;varordnung=[];varposcurrent=0;varposnext=0;if(arr[0][0]===''){return;}for(letx=0;x<arr.length;x++){varxpostask=arr[x][0];varypostask=arr[x][1];if(!ordnung.includes(xpostask)){ordnung.push(xpostask);}if(!ordnung.includes(ypostask)){ordnung.push(ypostask);}}varfertig=false;vartasktmp;varcountIterations=0;while(!fertig&&countIterations<arr.length){fertig=true;countIterations++;for(letx=0;x<arr.length;x++){varxpostask=arr[x][0];varypostask=arr[x][1];poscurrent=ordnung.indexOf(xpostask);posnext=ordnung.indexOf(ypostask);if(poscurrent>posnext){tasktmp=ordnung[poscurrent];ordnung[poscurrent]=ypostask;ordnung[posnext]=tasktmp;fertig=false;}}}if(countIterations==arr.length){ordnung=newArray();}returnordnung;}}vartest=newtopsort([['schlafen','studieren'],['essen','studieren'],['studieren','prüfen']]);varerg=test.sort();console.assert(erg=='schlafen,essen,studieren,prüfen','Falsch:',test);</script><b>ClickMe:</b><inputtype=buttononClick='document.write(erg)'value='Start'></body></html>"
             ],
             "references":[
 
@@ -212,7 +259,11 @@
 
         "Topologische Iterierbarkeit": {
             "content":[
-                ""
+                "Stellen Sie bei Ihrer Klasse aus der letzten Aufgabe die topologische Iterierbarkeit her (zunächst über das Iterationsprotokoll, ohne Generator, ohne yield).",
+
+                "Zum Beispiel soll dadurch folgende for ... of loop möglich werden, mit der die Elemente in topologischer Sortierung durchlaufen werden:",
+
+                "<html> <body>  <script>  class Vorrang { constructor(arr) { this._arr = arr; }  [Symbol.iterator]() { const that = this;  let i = 0; return { next() { const props = that.sort(); return {  value: props[i++], done: i > props.length } } } }  get arrayy() { return this._arr; }  set arrayy(arr) { this._arr = arr; } sort( ) { var arr = this.arrayy; var ordnung = []; var poscurrent = 0; var posnext = 0;  if(arr[0][0] === '') { return; }  for(let x=0;x<arr.length;x++) { var xpostask = arr[x][0]; var ypostask = arr[x][1]; if(!ordnung.includes(xpostask)) { ordnung.push(xpostask); } if(!ordnung.includes(ypostask)) { ordnung.push(ypostask); } }  var fertig = false; var tasktmp; var countIterations = 0; while (!fertig && countIterations < arr.length) { fertig = true; countIterations++; for(let x=0;x<arr.length;x++) {  var xpostask = arr[x][0]; var ypostask = arr[x][1]; poscurrent = ordnung.indexOf(xpostask); posnext = ordnung.indexOf(ypostask); if(poscurrent > posnext) {  tasktmp = ordnung[poscurrent]; ordnung[poscurrent] = ypostask; ordnung[posnext] = tasktmp; fertig = false; } } } if(countIterations == arr.length) { ordnung = new Array(); }  return ordnung; } }   var test = new Vorrang([ ['schlafen', 'studieren'], ['essen', 'studieren'], ['studieren', 'prüfen'] ]); var erg = test.sort(); console.assert(erg == 'schlafen,essen,studieren,prüfen', 'Falsch: ', test);  const studentenLeben = new Vorrang([ ['schlafen', 'studieren'], ['essen', 'studieren'], ['studieren', 'prüfen'] ]);  for ( const next of studentenLeben ){ console.log( next ); } </script>  <b>Click Me:</b> <input type=button onClick='document.write(erg)' value='Start'> </body> </html>"
             ],
             "references":[
 
@@ -221,7 +272,11 @@
 
         "Topologischer Generator": {
             "content":[
-                ""
+                "Stellen Sie bei Ihrer Klasse aus der vorletzten Aufgabe die topologische Iterierbarkeit mittels Generator her.",
+
+                "Wählen Sie eine Implementierung, die universell gültig, also nicht nur für das Beispiel gilt.",
+
+                "<html><body><script>class Vorrang { constructor(arr) { this._arr = arr; }* [Symbol.iterator]() { const props = this.sort(); for(const next of props) { yield next; }}get arrayy() { return this._arr; }sort( ) { var arr = this.arrayy; var ordnung = []; var poscurrent = 0; var posnext = 0; //Bei leere Relation if(arr[0][0] === '') { return; } // Alle Tasks in der Relation werden einmalig in einer Liste aufgenommen for(let x=0;x<arr.length;x++) { var xpostask = arr[x][0]; var ypostask = arr[x][1]; if(!ordnung.includes(xpostask)) { ordnung.push(xpostask); } if(!ordnung.includes(ypostask)) { ordnung.push(ypostask); } } //Nun Sortiere die Liste nach AbhÃ¤ngigkeiten der Relation var fertig = false; var tasktmp; var countIterations = 0; while (!fertig && countIterations < arr.length) { fertig = true; countIterations++; for(let x=0;x<arr.length;x++) { var xpostask = arr[x][0]; var ypostask = arr[x][1]; poscurrent = ordnung.indexOf(xpostask); posnext = ordnung.indexOf(ypostask); if(poscurrent > posnext) { //swap task tasktmp = ordnung[poscurrent]; ordnung[poscurrent] = ypostask; ordnung[posnext] = tasktmp; fertig = false; } } } if(countIterations == arr.length) { ordnung = new Array(); } return ordnung; }} var test = new Vorrang([ ['schlafen', 'studieren'], ['essen', 'studieren'], ['studieren', 'prÃ¼fen'] ]); var erg = test.sort(); console.assert(erg == 'schlafen,essen,studieren,prÃ¼fen', 'Falsch: ', test); const studentenLeben = new Vorrang([ ['schlafen', 'studieren'], ['essen', 'studieren'], ['studieren', 'prÃ¼fen'] ]); for ( const next of studentenLeben ){ console.log( next ); } </script><b>Click Me:</b><input type=button onClick='document.write(erg)' value='Start'></body></html>                "
             ],
             "references":[
 
@@ -251,8 +306,75 @@
     "Functional": {
         "Funktionen in JavaScript": {
             "content":[
-                ""
-            ],
+                "Schreiben Sie eine Funktion identity_function(), die ein Argument als Parameter entgegen nimmt und eine Funktion zurück gibt, die dieses Argument zurück gibt.",
+                "function identity_function(x) { return function(x) { return x; }}",
+
+                "<br/><br/>",
+
+                "Schreiben Sie eine Addier-Funktion addf(), so dass addf(x)(y) genau x + y zurück gibt. (Es haben also zwei Funktionsaufrufe zu erfolgen. addf(x) liefert eine Funktion, die auf y angewandt wird.)<br/>",
+                "function addf(x) { return function(y) { return x + y; }}",
+
+                "<br/><br/>",
+
+                "Schreiben Sie eine Funktion applyf(), die aus einer binären Funktion wie add(x,y) eine Funktion addfberechnet, die mit zwei Aufrufen das gleiche Ergebnis liefert, z.B. addf = applyf(add); addf(x)(y) soll add(x,y) liefern. Entsprechend applyf(mul)(5)(6) soll 30 liefern, wenn mul die binäre Multiplikation ist.<br/>",
+                "function applyf(operator){ return function(x) {  return function(y) { return operator(x, y)  } }}",
+
+                "<br/><br/>",
+
+                "Schreiben Sie eine Funktion curry() (von Currying), die eine binäre Funktion und ein Argument nimmt, um daraus eine Funktion zu erzeugen, die ein zweites Argument entgegen nimmt, z.B. add3 = curry(add, 3);add3(4) ergibt 7. curry(mul, 5)(6) ergibt 30",
+                "function curry(operator, x) { return function(y) {  return operator(x, y) }}                ",
+
+                "<br/><br/>",
+
+                "Erzeugen Sie die inc-Funktion mit Hilfe einer der Funktionen addf, applyf und curry aus den letzten Aufgaben, ohne die Funktion inc() selbst zu implementieren. (inc(x) soll immer x + 1 ergeben und lässt sich natürlich auch direkt implementieren. Das ist aber hier nicht die Aufgabe.) Vielleicht schaffen Sie es auch, drei Varianten der inc()-Implementierung zu schreiben?",
+                "var inc = function(x) {  return curry(add, 1)(x) } var inc = function(x) {  return applyf(add)(1)(x) } var inc = function(x) {  return addf(1)(x) }",
+
+                "<br/><br/>",
+
+                "Schreiben Sie eine Funktion methodize(), die eine binäre Funktion (z.B. add, mul) in eine unäre Methode verwandelt. Nach Number.prototype.add = methodize(add); soll (3).add(4) genau 7 ergeben.",
+                "function methodize(operator) { return function(x) {  return operator(this, x); }}                ",
+
+                "<br/><br/>",
+
+                "Schreiben Sie eine Funktion demethodize(), die eine unäre Methode (z.B. add, mul) in eine binäre Funktion umwandelt. demethodize(Number.prototype.add)(5, 6) soll 11 ergeben.",
+                "function demethodize(operator) {  return function(x, y) {  const obj = {a:x, b:y}  var op = operator.call(x,y) return op  } }",
+
+                "<br/><br/>",
+
+                "Schreiben Sie eine Funktion twice(), die eine binäre Funktion in eine unäre Funktion umwandelt, die den einen Parameter zweimal weiter reicht. Z.B. var double = twice(add); double(11) soll 22 ergeben; var square = twice(mul); square(11) soll mul(11,11) === 121 ergeben.",
+                "function twice(operator) { return function(x) { return operator(x,x) } }",
+
+                "<br/><br/>",
+
+                "Schreiben Sie eine Funktion composeu(), die zwei unäre Funktionen in eine einzelne unäre Funktion transformiert, die beide nacheinander aufruft, z.B. soll composeu(double, square)(3) genau 36 ergeben.",
+                "function composeu(operator1, operator2) { return function(x) { return operator2(operator1(x)) } }",
+
+                "<br/><br/>",
+
+                "Schreiben Sie eine Funktion composeb(), die zwei binäre Funktionen in eine einzelne Funktion transformiert, die beide nacheinander aufruft, z.B. composeb(add, mul)(2, 3, 5) soll 25 ergeben.",
+                "function composeb(operator1, operator2) { return function(x, y, z) { return operator2(operator1(x, y), z) } }",
+
+                "<br/><br/>",
+
+                "Schreiben Sie eine Funktion once(), die einer anderen Funktion nur einmal erlaubt, aufgerufen zu werden, z.B. add_once = once(add); add_once(3, 4) soll beim ersten Mal 7 ergeben, beim zweiten Mal soll jedoch add_once(3, 4) einen Fehlerabbruch bewirken.",
+                "function once(operator) { var done = false; return function(x, y) {  if(done) { alert('Fehlerabbruch') return 'Fehlerabbruch '; } else { done = true; return operator(x, y) } } }",
+
+                "<br/><br/>",
+
+                "Schreiben Sie eine Fabrik-Funktion counterf(), die zwei Funktionen inc() und dec() berechnet, die einen Zähler hoch- und herunterzählen. Z.B. counter = counterf(10); Dann soll counter.inc() 11 und counter.dec() wieder 10 ergeben.",
+                "function counterf(x) { return { inc() { return ++x; }, dec() { return --x; } } }",
+
+                "<br/><br/>",
+
+                "Schreiben Sie eine rücknehmbare Funktion revocable(), die als Parameter eine Funktion nimmt und diese bei Aufruf ausführt. Sobald die Funktion aber mit revoke() zurück genommen wurde, führt ein erneuter Aufruf zu einem Fehler.",
+                "function revocable(operator) { var done = false; return { invoke(x) { if(!done) { operator(x) } else alert('ABRUCH'); } }, revoke() { done = true; } } }",
+
+                "<br/><br/>",
+
+                "Implementieren Sie ein 'Array Wrapper'-Objekt mit den Methoden get, store und append, so dass ein Angreifer keinen Zugriff auf das innere, private Array hat.",
+                "function vector() { var inner_array = []; return {  append: function(x) { inner_array.push(x)  },  store: function(pos, x) { inner_array[pos] = x;  },  get: function(pos) { return inner_array[pos];  } }}                "
+
+                ],
             "references":[
 
             ]
@@ -260,7 +382,8 @@
 
         "Textanalyse mit filter-map-reduce": {
             "content":[
-                ""
+                "Schreiben Sie in JavaScript eine Textanalyse. Ermitteln Sie die häufigsten Begriffe im Text Plagiatsresolution. Filtern Sie dabei alle Stoppworte und HTML-Tags. Reduzieren Sie das Ergebnis auf die 3 häufigsten Begriffe.",
+                "function f(text) { erg = [] text = text.split(' ') for(let i = 0; i < text.length; i++) {  if(text[i] in erg) { continue;  } else { erg.push(text[i]);  } } return erg;}var n = f(text)seen = []const a = n.map(function(x) { var counter = 0; for(let i = 0; i < n.length; i++) {  if(x == n[i] && !(x in seen)) { seen.push(x) counter++;  } } counter = 0; return seen;})                "
             ],
             "references":[
 
@@ -270,18 +393,138 @@
     },
 
     "DOM": {
+        "Performanzmessungen von DOM-Operationen": {
+            "content": [
+                "Implementieren Sie Performanzmessungen zum Vergleich von innerHTML, innerText, textContent und outerHTML selbstständig in JavaScript durch Nutzung der DOM API. Geben Sie die Messergebnisse als Tabelle aus. Verwenden Sie die eingebauten Zeitmess-Funktionen performance.now (), siehe auch When-milliseconds-are-not-enough-performance-now. Suchen Sie eine möglichst kurze und elegante Lösung.<br/>",
+                "Dabei ist zu beachten, dass Browser, um potenzielle Sicherheitsbedrohungen wie Spectre oder Meltdown zu minimieren, den zurückgegebenen Wert normalerweise um einen bestimmten Betrag runden. Dies führt zu einer gewissen Ungenauigkeit. Beispielsweise rundet Firefox die zurückgegebene Zeit in Schritten von 1 Millisekunde. Diese Zwangsrundung kann man jedoch wiederum abschalten mittels Firefox setting privacy.reduceTimerPrecision, siehe How to get microsecond timings in JavaScript since Spectre and Meltdown.<br/<br/>",
+
+                "<!DOCTYPE html><html lang='de'> <head>  <meta charset='utf-8'>  <meta name='viewport' content='width=device-width, initial-scale=1.0'>  <title>Rednerliste</title> </head> <body> <style>  table, th, td {  border: 1px solid black; }</style>  <table style='width:50%'>  <tr> <th>InnerHTML</th> <th>innerText</th> <th>textContent </th> <th>outerHTML</th>  </tr>  <tr> <td id='innerhtml'></td> <td id='innertext'></td> <td id='textcontent'></td> <td id='outerhtml'></td>  </tr> </table> <script>  var li = document.createElement('li');  li.innerHTML = performance.now();  var ul = document.getElementById('innerhtml'); ul.appendChild(li);  var li = document.createElement('li');  li.innerText = performance.now()  var ul = document.getElementById('innertext')  ul.appendChild(li);  var li = document.createElement('li');  li.textContent = performance.now()  var ul = document.getElementById('textcontent')  ul.appendChild(li);  //var li = document.createElement('li');  li.outerHTML = performance.now()  var ul = document.getElementById('outerhtml')  ul.appendChild(li);  </script>  </body></html>"
+            
+            ]
+        },
+
+        "Rednerliste mit Zeitmessung": {
+            "content": [
+                "Implementieren Sie die interaktive Anwendung 'Rednerliste mit Zeitmessung' selbstständig in JavaScript durch Nutzung der DOM API und der Timer-Funktionen. Neue Redner sollen auf Knopfdruck hinzugefügt werden können. Deren Uhr wird dann sofort automatisch gestartet und alle anderen Uhren angehalten. Bei jedem Redner soll die individuelle, gemessene Redezeit sekundengenau angezeigt werden. Für jeden Redner soll es einen eigenen Start-/Stopp-Button geben. Es soll immer nur eine Uhr laufen. Angezeigt werden sollen die bisherigen Summenzeiten aller Redebeiträge der betreffenden Person. Suchen Sie eine möglichst kurze und elegante Lösung. Achten Sie gleichzeitig auf gute Usability: z.B. wenn die Eingabe mit einem Return beendet wird, soll der Button-Click nicht mehr erforderlich sein, usw.",
+                "<!DOCTYPE html><html lang='de'> <head>  <meta charset='utf-8'>  <meta name='viewport' content='width=device-width, initial-scale=1.0'>  <title>Rednerliste</title> </head> <body>  <h1>Rednerliste</h1>  Neuer Redner:  <input id='myInput' placeholder='Redner'>  <button id='myBtn'>HinzufÃ¼gen</button>  <ul id='list'></ul>  <script src = 'javascript.js'></script> </body></html>",
+
+                "<br/><br/>",
+
+                "JavaScript Code: <br/><br/>",
+                "var input = document.getElementById('myInput');input.addEventListener('keyup', function(event) { if (event.keyCode === 13) {  event.preventDefault();  document.getElementById('myBtn').click(); }});var n = 0;function pad ( val ) { return val > 9 ? val : '0' + val; }var sec = [];var count = 0;var tmp = []var bool = []const b = document.querySelector('button');b.addEventListener('click', function(event) {  event.preventDefault();  knopfDruck();})function start(nummer) {  bool[nummer] = !bool[nummer];  if(bool[nummer]){ document.querySelector('#knopfSpeichern' + nummer).value = 'Stop!';//  sec[nummer] = 0;  tmp[nummer] = setInterval( function(){  document.getElementById('seconds' + nummer).innerHTML=pad(++sec[nummer]%60);  document.getElementById('minutes' + nummer).innerHTML=pad(parseInt(sec[nummer]/60,10));  document.getElementById('hours'+ nummer).innerHTML=pad(parseInt((sec[nummer]/60)/60,10));  }, 1000);}  if(!bool[nummer]) {  document.querySelector('#knopfSpeichern' + nummer).value = 'Start!';  clearInterval ( tmp[nummer] )  }}function stop(nummer) {  clearInterval ( tmp[nummer] )}function knopfDruck(){  var textEingabefeld = document.getElementById('myInput');  var artikelEingabe = textEingabefeld.value;  if (artikelEingabe == ''){  alert('Bitte Namen eingeben');  return;  } else {  var li = document.createElement('li');  li.innerHTML = artikelEingabe + ' <span id='hours' + n +''></span>:<span id='minutes' + n + ''></span>:<span id='seconds' + n + ''></span> ' + '<input onclick='start(' + n + ')' type='button' id='knopfSpeichern' + n +'' value='Start'>';// + //'<input onclick='stop(' + n + ')' type='button' id='knopfSpeichern'' + n +' value='Stop'>';  var ul = document.getElementById('list');  ul.appendChild(li);  document.getElementById('myInput').value = '';  }  sec[n] = 0;  start(n)  n++;}                  "
+            ]
+        },
+
+        "TopSort als WebApp": {
+            "content": [
+                "<h1 style='color:red'>Aufgabe leider nicht geschafft</h1>"
+            ]
+        }
 
     },
 
     "Async": {
+        "Promises ": {
+            "content": [
+                "Erstellen Sie auf Ihrem Server www2.inf.h-brs.de (oder localhost) zwei Text-Dateien A.txt und B.txt mit ungefähr gleich vielen Zeilen. Laden Sie mit der fetch-API parallel beide Text-Dateien vom Server. Geben Sie auf einer Webseite den Inhalt beider Dateien zeilenweise aus, wobei der Anfang der Zeile aus A.txt und das Ende aus B.txt stammen soll. Die beiden Dateien sollen also zeilenweise konkateniert werden. Erzielen Sie max. Geschwindigkeit durch maximale Parallelität. Achten Sie gleichzeitig auf Korrektheit. Verwenden Sie dabei ausschließlich die Promise API ohne async / await.",
+                "<!DOCTYPE html> <meta content=”text/html; charset=utf-8″> <html> <head> <script> function f(sampleResp, sample2Resp) { var l = 0; if(sampleResp.length > sample2Resp.length) { l = sampleResp.length; } else { l = sample2Resp.length; } for(let index = 0; index < l; index++) { if(index % 2 === 0) { document.write('Absatz ' + ((index/2) + 1) + ':<br>') if(sampleResp[index] !== undefined) { document.write( 'gelesen aus A.txt:<br> ') document.write(sampleResp[index]); document.write( '<br><br> ')} if(sample2Resp[index] !== undefined) { document.write( 'gelesen aus B.txt:<br> ') document.write(sample2Resp[index]) } document.write( '<br><br> ') } } } function doma1() { Promise.all([ fetch('./A.txt').then(x => x.text()).then(x => x.split( '\n ')), fetch('./B.txt').then(x => x.text().then(x => x.split( '\n '))) ]). then(([sampleResp, sample2Resp]) => f(sampleResp, sample2Resp)) .catch(error => { console.log(error); }); } </script> </head> <body> <button onclick='doma1()'>Click me!</button> </body> </html>                "            ]
+        },
+
+        "async / await": {
+            "content": [
+                "Lösen Sie die letzte Aufgabe mit async / await statt Promise. ",
+                "<!DOCTYPE html> <meta content=”text/html; charset=utf-8″> <html> <head> <script> function f(sampleResp, sample2Resp) { var l = 0; if(sampleResp.length > sample2Resp.length) { l = sampleResp.length; } else { l = sample2Resp.length; } for(let index = 0; index < l; index++) { if(index % 2 === 0) { document.write('Absatz  + ((index/2) + 1) + ':<br>') if(sampleResp[index] !== undefined) { document.write( 'gelesen aus A.txt:<br> ') document.write(sampleResp[index]); document.write( '<br><br> ')} if(sample2Resp[index] !== undefined) { document.write( 'gelesen aus B.txt:<br> ') document.write(sample2Resp[index]) } document.write( '<br><br> ') } } } async function ff() { // await Promise.all([ // (async() => fetch('./A.txt').then(x => x.text()).then(x => x.split( '\n '))), // (async() => fetch('./B.txt').then(x => x.text()).then(x => x.split( '\n '))) // ]) // .then(([sampleResp, sample2Resp]) => f(sampleResp, sample2Resp)) // .catch(error => console.log(error)) // console.log( 'HI ') await Promise.all([ await fetch('./A.txt').then(x => x.text()).then(x => x.split( '\n ')), await fetch('./B.txt').then(x => x.text().then(x => x.split( '\n '))) ]). then(([sampleResp, sample2Resp]) => f(sampleResp, sample2Resp)) .catch(error => { console.log(error); }); } </script> </head> <body> <button onclick='ff()'>Click me!!!!</button> </body> </html>               "    
+            ]
+        },
+
+        "WWW-Navigator": {
+            "content": [
+                "WWW-Navigator",
+                "<h1 style='color:red'>Aufgabe leider nicht geschafft</h1>"
+            ]
+        }
 
     },
     "Vue": {
+        "Komponente in Vue.js": {
+            "content":[
+                "Schreiben Sie eine Vue.js Single File Component mit einem Text-Eingabefeld und 3 Ausgabefeldern, in denen man während des Tippens sehen kann, (a) wie viele Buchstaben (b) wie viele Leerzeichen und (c) wie viele Worte man in das Text-Eingabefeld bereits eingegeben hat.",
+                "Betten Sie Ihre Komponente in eine Webseite zweimal ein und testen Sie, ob beide Komponenten unabhängig voneinander sind.",
+
+                "test.vue: <template> <div>  <input v-model='message' type='text'> <h2 class='message'>Buchstaben: {{ letters }}</h2> <h2 class='message'>Leerzeichen: {{ spaces }}</h2> <h2 class='message'>Worte: {{ message.trim().split(//\\s//g)[0] === '' ? 0 : words }}</h2> </div></template>",
+                "<script>export default {  name: 'doma', data() {  return { message: 'Hello World!',  }; }, computed: {  letters() { return this.message.replace(//\\s/g, '').length;  },  words() { let words = 0; let tmp = this.message.split(' ');  for(let i = 0; i < tmp.length; i++) { if(tmp[i] === '' && tmp.length > 1) { continue;  }  words++; } return words;  },  spaces() { let space = 0; for(let i = 0; i < this.message.length; i++) {  if(this.message[i] === ' ') { space++;  } } return space;  } }}</script><style>body {  background-color: grey;}.message { font-size: 18px; font-family: 'Roboto', sans-serif; color: blue;}</style>App.vue: <script>import doma from './components/test.vue'export default { name: 'doma2', components: {  doma, }};</script>",
+                " <template><div> <doma> </doma> <doma> </doma> </div></template> ",
+
+                "<br/><br/>",
+
+                "<html> <head>  <title>Vue Hello World</title> </head> <body>  <script type='module' src='https://unpkg.com/vue'></script> <div id='app'> </div>  <br> </body></html>                "
+
+            ]
+        },
+
+        "Menü-Komponente": {
+            "content":[
+                "Geben Sie die Inhalte aller Dateien Ihrer Lösung inkl. JS-Quelltext hintereinander ein. Schreiben Sie vor jede Datei deren Dateiname: ",
+                "navbar.vue: <template>  <div >  <!-- <a href v-for='link in links' :key='link.id'> {{link.id}} <br v-if='ausrichtung'> </a> -->  <button :style='{display: ausrichtung}'  v-for='tab in tabs'  v-bind:key='tab'  v-bind:class='['tab-button', { active: currentTab === tab }]'  v-on:click='currentTab = tab'  >  {{ tab }}  </button>  </div></template><script>export default {  name: 'app', data() {  return { tabs: [ 'Home', 'About Us', 'contact', 'Impressum'  //  {id: 'Home'},  //  {id: 'About Us'},  //  {id: 'Contact'},  //  {id: 'Impressum'}  ],  ausrichtung: ''  }; }, computed: { swicher() { return this.ausrichtung === '' ? 'block' : '' },  letters() { return this.message.replace(/\\s/g, '').length;  },  words() { let words = 0; let tmp = this.message.split(' '); for(let i = 0; i < tmp.length; i++) {  if(tmp[i] === '' && tmp.length > 1) { continue;  }  words++; } return words;  },  spaces() { let space = 0; for(let i = 0; i < this.message.length; i++) {  if(this.message[i] === ' ') { space++;  } } return space;  } }}</script><style>body {  background-color: grey;}.message { font-size: 18px; font-family: 'Roboto', sans-serif; color: blue;}</style>App.vue: <template>  <div id='app'> <bar > </bar>  </div></template> <script>import bar from './components/navbar.vue'export default { name: 'app', components: {  bar }};</script>index.html:<html> <head>  <title>Vue Hello World</title> </head> <body>  <script src='https://unpkg.com/vue'></script> <div id='app'> </div>  <br> </body></html>                "
+                
+            ]
+        },
+
+        "Vue.js WWW-Navigator": {
+            "content":[
+                "Schreiben Sie Ihren WWW-Navigator als SPA in Vue.js",
+                "<h1 style='color:red'>Aufgabe leider nicht geschafft aber diese Seite ist ja sowas ähnliches</h1>"
+                
+            ]
+        }
 
     },
 
     "PHP": {
 
+        "Registrierung mit PHP": {
+            "content": [
+                "Erstellen Sie mit PHP 5 auf www2.inf.h-brs.de ein Registrierungsformular. Speichern Sie die eingegebenen Daten persistent in einer Datei auf www2.inf.h-brs.de. Schreiben Sie Ihre PHP-Scripte so, dass es zu keinen Nebenläufigkeitsartefakten (z.B. Lost Update) kommen kann, egal wie viele Nutzer sich gleichzeitig registrieren. ",
+                "<!doctype html><h1>Register</h1><?PHPif ( isset($_POST[ 'account' ]) && isset($_POST[ 'password' ]) ){  $account = $_POST[ 'account' ];  $passwd = $_POST[ 'password' ];  $file = './raw_passwd.csv';  $new_line = $account . ',' . $passwd . '\n';  if ( file_put_contents( $file, $new_line, FILE_APPEND | LOCK_EX ) ){  echo '<script>alert('Registered successfully!')</script>';  }}?><form method='post'>  <fieldset>  <legend>Register a new Account:</legend>  Account name:<br>  <input type='text' name='account'>  <br>  Password:<br><input type='password' name='password'>  <br><br>  <input type='submit' value='Submit'>  </fieldset></form></html>                "
+
+            ]
+        },
+
+        "Login mit PHP": {
+            "content": [
+                "Schreiben Sie eine sichere PHP-Lösung für Login, das die persistierten Registrierungsdaten aus der letzten Aufgabe nutzt. ",
+                "<br/><br/>",
+                "<h1 style='color:red'>Aufgabe leider nicht geschafft</h1>"
+
+            ]
+        },
+
+        "WWW-Navigator zum Content-Editor ausbauen": {
+            "content": [
+                "Bauen Sie Ihren WWW-Navigator zum Content-Editor aus, mit dem Sie weitere Inhalte hinzu fügen können, die persistent auf dem Server mittels PHP gespeichert werden. Schreiben Sie Ihre PHP-Scripte so, dass es zu keinen Nebenläufigkeitsartefakten kommen kann, egal wie viele Nutzer gleichzeitig editieren und speichern.",
+
+                "Speichern Sie die Inhalte Ihres WWW-Navigators auf dem Server www2.inf.h-brs.de. Erweitern Sie Ihren WWW-Navigator um eine Edit-Funktionalität, so dass Inhalte editiert und ergänzt werden können. Vermeiden Sie die Lost Update-Anomalie.",
+                
+                "Schützen Sie Ihre Inhalte mit einem Login. ",
+
+                "<br/><br/>",
+
+                "<h1 style='color:red'>Aufgabe leider nicht geschafft</h1>"
+
+            ]
+        }
+
+    },
+    "Impressum": {
+        "Impressum":{ 
+            "content":[
+            "<p><strong>Impressum</strong></p>",
+            "<p>Anbieter:<br/>Mohamed el Sayed<br/>Bernksateler Straße 44<br/>53175 Bonn</p>",
+            "<p>Kontakt:<br />Telefon: 0228 / 7 10 10 833<br />Mobile: 0176 / 766 744 05<br />E-Mail: moe.said@hotmail.com<br />Website: http://www2.inf.h-bonn-rhein-sieg.de/~msayed2s/</p>",
+            "<p> </p>",
+            "<p>Bei redaktionellen Inhalten:</p>",
+            "<p>Verantwortlich nach § 55 Abs.2 RStV<br />Mohamed el Sayed<br />Bernksateler Straße 44<br />53175 Bonn</p>"
+        ]}
     }
 
 

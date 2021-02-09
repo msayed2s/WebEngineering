@@ -6,3 +6,5 @@ function go() {
 function identity(x) {
     return x;
 }
+
+export {go}

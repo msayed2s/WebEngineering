@@ -27,11 +27,10 @@
 .header { 
   grid-area: header; 
   height: 10vh;
-  animation: 1s ease-out 0s 1 slideInFromLeft;
+  animation: 1s ease-out 0s 1 slideInFromTop;
 
   /* https://www.w3schools.com/cssref/pr_border-bottom.asp */
   /* border-bottom: 5px solid red; */
-
 
 }
 
@@ -42,6 +41,7 @@
   height: 60vh;   
   text-align: left; 
   width: 40vh;
+
 
   /* https://www.w3schools.com/cssref/pr_border-bottom.asp */
   /* border-right: 5px solid red; */
@@ -54,7 +54,8 @@
   grid-area: main; 
   height: 60vh; 
   width: 60vw; 
- 
+  padding-left: 0px;
+
   
 }
 
@@ -93,6 +94,17 @@ h1, h2, h3, h4, h5, h6   {
   padding: 10px;
   width: 95vw;
   height: 95vh;
+}
+
+@media (max-width: 800px) {
+  .grid-container {
+    grid-template-areas: 
+    'blank header header header header header'
+    'menu menu menu menu menu menu menu'
+    'main main main main main main main'
+  }
+
+  .header {}
 }
 
 
