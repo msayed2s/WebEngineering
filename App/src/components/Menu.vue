@@ -48,6 +48,7 @@ export default {
   animation: 1s ease-out 0s 1 slideInFromLeft;
   list-style-type: none;
   
+  
 }
 .subitems span {
   transition: all 0.3s;

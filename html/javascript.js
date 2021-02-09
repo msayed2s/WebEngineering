@@ -30,7 +30,7 @@ function generator(title, pfad, nummer ) {
         }
 }
 
-function test(nummer) {
+function show(nummer) {
     switch(nummer) {
         case 1:
              if(bool[nummer] === 99) {
@@ -165,11 +165,6 @@ function backIn(nummer) {
 
 
 
-// var tmpp = document.getElementById('test1').addEventListener("onclick", event => {
-//     event.preventDefault();
-//     console.log("Doma ist Baba");
-// })
-
 
 function changeStyle() {
 
@@ -184,12 +179,5 @@ function changeStyle() {
 
     }
     
-
-    
-    console.log("Hi")
 }
 
-// document.addEventListener(onclick, event => {
-//     var tmpp = document.getElementById('main')
-//     console.log("Doma ist King")
-// })

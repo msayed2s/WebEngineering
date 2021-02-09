@@ -19,17 +19,8 @@
           </div>
 
           <div class="main">
-            <!-- <script type="application/javascript" src="./test.js">  </script> -->
-            
             <Main :subcontent="subcontent"></Main>
-            <!-- <htmlTemplate/> -->
           </div>
-
-          <!-- <div class="footer">
-            <Footer :who="['Impressum']"></Footer>
-          </div> -->
-
-          
     </div>
 
 
@@ -37,13 +28,13 @@
 </template>
 
 <script >
-// import test from "./components/test.vue"
+
 import Button from "./components/Button.vue"
 import Menu from "./components/Menu.vue"
 import Main from "./components/Main.vue"
 import content from "./components/Aufbau.json"
 // import Footer from "./components/Footer.vue"
-// import htmlTemplate from "./components/html-template.vue"
+
 
 
 
@@ -51,19 +42,15 @@ export default {
   name: 'App',
   components: {
 
-    // test,
     Button,
     Menu,
     Main,
-    // Footer
-    // htmlTemplate
-    
-    
+    // Footer    
   },
   data() {
     return {
       lastSeen: "",
-      subcontent: ["<h1 style='text-align:center'>Willkommen zu meinem Semester - Projekt!</h1>",
+      subcontent: ["<h1 style='text-align:center'>Willkommen zu meinem Semester - Projekt!</h1><br/<br/>",
                     "<p style='text-align:left;'>Für die umsetzung der Web-App habe ich Vue Single-File-Components verwendet.",
                     "Vue ist State of the Art und ein sehr mächtiges Framework mit denen man fast alle im Semster gelernten Methoden anwenden kann.",
                     "Ich habe das Projekt mit Single-File-Components aufgebaut. Dies hat es mir erlaubt, die Website sehr dynamisch aufzubauen.",
