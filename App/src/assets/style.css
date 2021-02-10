@@ -23,7 +23,7 @@
 }
 
 * {
-  font-family: "josefin slab";
+  font-family: 'Trebuchet MS', sans-serif;
 }
 
 
@@ -74,6 +74,7 @@ body {
   /* background-color: #1034A6; */
   color: white;
   transition-duration: 500ms;
+  
 
 }
 h1, h2, h3, h4, h5, h6   {
