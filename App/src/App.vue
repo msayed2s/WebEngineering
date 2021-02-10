@@ -51,7 +51,7 @@ export default {
     return {
       lastSeen: "",
       subcontent: ["<h1 style='text-align:center'>Willkommen zu meinem Semester - Projekt!</h1><br/<br/>",
-                    "<p style='text-align:left;'>Für die umsetzung der Web-App habe ich Vue Single-File-Components verwendet.",
+                    "<p style='text-align:left;'>Für die Umsetzung der Web-App habe ich Vue Single-File-Components verwendet.",
                     "Vue ist State of the Art und ein sehr mächtiges Framework mit denen man fast alle im Semster gelernten Methoden anwenden kann.",
                     "Ich habe das Projekt mit Single-File-Components aufgebaut. Dies hat es mir erlaubt, die Website sehr dynamisch aufzubauen.",
                     "Jedes der Components hat seinen eigenen HTML, CSS und JavaScript Code bereits implementiert. So weiß man genau, wo man was äändern muss um den gewünschten Effekt zu erzielen",

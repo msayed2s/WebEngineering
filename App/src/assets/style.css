@@ -22,6 +22,10 @@
   }
 }
 
+* {
+  font-family: "josefin slab";
+}
+
 
 
 .header { 
@@ -67,6 +71,7 @@
 
 body {
   background-color: #363945;
+  /* background-color: #1034A6; */
   color: white;
   transition-duration: 500ms;
 
